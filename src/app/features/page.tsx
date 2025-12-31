@@ -42,7 +42,7 @@ export default function FeaturesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {features.map((feature, index) => (
               <div key={index} className="group bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-                <div className={}><feature.icon className="h-6 w-6" /></div>
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.color} text-white mb-4`}><feature.icon className="h-6 w-6" /></div>
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{feature.title}</h2>
                 <p className="text-slate-600 dark:text-slate-300 mb-4">{feature.description}</p>
               </div>
