@@ -3,7 +3,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Play, Sparkles, Zap, TrendingUp, ArrowRight } from "lucide-react";
+import { Play, Sparkles, ArrowRight, CheckCircle } from "lucide-react";
+
+const benefits = [
+  "AI-powered content generation",
+  "Multi-platform publishing",
+  "Smart scheduling automation",
+  "No credit card required",
+];
 
 export function Hero() {
   return (
@@ -64,11 +71,27 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-10"
+            className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-8"
           >
-            Generate, schedule, and publish stunning content across all platforms.
-            Let AI handle the heavy lifting while you focus on growing your business.
+            Generate, schedule, and publish stunning content across LinkedIn, Facebook, 
+            Instagram, and Twitter. Let AI handle content creation while you focus on 
+            growing your business.
           </motion.p>
+
+          {/* Benefits list */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="flex flex-wrap justify-center gap-4 mb-10"
+          >
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span>{benefit}</span>
+              </div>
+            ))}
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,55 +101,33 @@ export function Hero() {
           >
             <Link href="https://app.kontentfire.com/register">
               <Button size="lg" className="group">
-                Start Free Trial
+                Start Your Free Trial
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Link href="#demo">
+            <Link href="/demo">
               <Button variant="outline" size="lg" className="group">
                 <Play className="mr-2 h-5 w-5" />
-                Watch Demo
+                See How It Works
               </Button>
             </Link>
           </motion.div>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-slate-500 dark:text-slate-400"
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className="text-sm text-slate-500 dark:text-slate-400 mb-16"
           >
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 border-2 border-white dark:border-slate-800"
-                  />
-                ))}
-              </div>
-              <span className="font-medium">2,500+ creators</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex text-yellow-400">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="font-medium">4.9/5 rating</span>
-            </div>
-            <div className="font-medium">
-              <span className="text-orange-500">10M+</span> posts created
-            </div>
-          </motion.div>
+            14-day free trial. No credit card required. Cancel anytime.
+          </motion.p>
 
+          {/* Hero Image / Demo */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 relative"
+            className="mt-8 relative"
           >
             <div className="relative mx-auto max-w-5xl">
               <div className="bg-slate-800 rounded-t-xl p-3 flex items-center gap-2">

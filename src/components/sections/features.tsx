@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   Sparkles,
   Calendar,
@@ -13,7 +14,7 @@ import {
   Zap,
   Image as ImageIcon,
   FileText,
-  Clock,
+  ArrowRight,
 } from "lucide-react";
 
 const features = [
@@ -21,43 +22,49 @@ const features = [
     icon: Sparkles,
     title: "AI Content Generation",
     description:
-      "Create engaging posts, articles, and captions with GPT-4, Claude, and more. Our multi-AI approach ensures the best content every time.",
+      "Create engaging posts, articles, and captions powered by GPT-4 and Claude. Our multi-AI approach ensures high-quality content every time.",
     color: "from-purple-500 to-indigo-500",
+    link: "/features/ai-content",
   },
   {
     icon: Calendar,
     title: "Smart Scheduling",
     description:
-      "Set it and forget it. Schedule content weeks in advance with optimal timing based on your audience's engagement patterns.",
+      "Schedule content weeks in advance. Set optimal posting times based on when your audience is most active.",
     color: "from-blue-500 to-cyan-500",
+    link: "/features/scheduling",
   },
   {
     icon: BarChart3,
-    title: "Analytics & Insights",
+    title: "Analytics Dashboard",
     description:
-      "Track performance across all platforms. Get actionable insights to improve engagement and grow your audience.",
+      "Track performance across all platforms. Get insights to improve engagement and understand what works.",
     color: "from-green-500 to-emerald-500",
+    link: "/features/analytics",
   },
   {
     icon: ImageIcon,
     title: "AI Image Generation",
     description:
-      "Create stunning visuals with DALL-E and Stable Diffusion. Perfect images for every post, every time.",
+      "Create stunning visuals with DALL-E and Stable Diffusion. Generate custom images that match your brand.",
     color: "from-pink-500 to-rose-500",
+    link: "/features/image-generation",
   },
   {
     icon: FileText,
     title: "Content Templates",
     description:
-      "Choose from dozens of proven templates for different content types. Battle Royale, Myth Busters, How-To guides and more.",
+      "Choose from proven templates for different content types. Battle Royale, Myth Busters, How-To guides and more.",
     color: "from-amber-500 to-orange-500",
+    link: "/features/templates",
   },
   {
     icon: Bot,
     title: "Full Automation",
     description:
-      "Set up automated workflows that create, approve, and publish content without lifting a finger.",
+      "Set up automated workflows that create and publish content on your schedule without manual intervention.",
     color: "from-red-500 to-pink-500",
+    link: "/features/automation",
   },
 ];
 
@@ -135,9 +142,15 @@ export function Features() {
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
                 {feature.title}
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-slate-600 dark:text-slate-300 mb-4">
                 {feature.description}
               </p>
+              <Link 
+                href={feature.link}
+                className="inline-flex items-center text-orange-500 font-medium hover:gap-2 transition-all"
+              >
+                Learn more <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -171,33 +184,8 @@ export function Features() {
             ))}
           </div>
           <p className="mt-6 text-slate-500 dark:text-slate-400">
-            + Google My Business, WordPress, and more coming soon
+            + Google My Business and WordPress integration coming soon
           </p>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8"
-        >
-          {[
-            { value: "10M+", label: "Posts Created" },
-            { value: "2,500+", label: "Active Users" },
-            { value: "99.9%", label: "Uptime" },
-            { value: "4.9/5", label: "User Rating" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold fire-text mb-2">
-                {stat.value}
-              </div>
-              <div className="text-slate-600 dark:text-slate-300 font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </motion.div>
       </div>
     </section>
