@@ -101,7 +101,7 @@ export function Hero() {
           >
             <Link href="https://app.kontentfire.com/register">
               <Button size="lg" className="group">
-                Start Your Free Trial
+                Sign Up Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -119,7 +119,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.35 }}
             className="text-sm text-slate-500 dark:text-slate-400 mb-16"
           >
-            14-day free trial. No credit card required. Cancel anytime.
+            14-day special offer. No credit card required. Cancel anytime.
           </motion.p>
 
           {/* Hero Image / Demo */}

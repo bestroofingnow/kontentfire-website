@@ -22,7 +22,7 @@ const faqs = [
   { question: 'How long does it take to set up KontentFire?', answer: 'Most users complete setup in under 10 minutes. Create an account, connect platforms, and start generating content.' },
   { question: 'Do I need technical skills?', answer: 'No. KontentFire is intuitive and user-friendly. We provide guides and support.' },
   { question: 'Can I review content before publishing?', answer: 'Yes. Review, edit, and approve every piece before it goes live.' },
-  { question: 'What happens after my free trial?', answer: 'Choose a paid plan to continue. Data preserved for 30 days if you downgrade.' },
+  { question: 'What happens after my special offer?', answer: 'Choose a paid plan to continue. Data preserved for 30 days if you downgrade.' },
   { question: 'How does the AI know what content to create?', answer: 'AI uses your input, brand guidelines, and preferences to generate relevant content.' },
 ];
 
@@ -58,8 +58,8 @@ export default function HowItWorksPage() {
           </section>
           <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
-            <p className="text-slate-300 mb-8">14-day free trial with full access.</p>
-            <Link href="https://app.kontentfire.com/register"><Button size="lg">Start Free Trial<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
+            <p className="text-slate-300 mb-8">14-day special offer with full access.</p>
+            <Link href="https://app.kontentfire.com/register"><Button size="lg">Sign Up Now<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
           </div>
         </div>
       </main>

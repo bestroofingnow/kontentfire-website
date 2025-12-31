@@ -3,13 +3,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Check, Flame, Sparkles, Zap } from "lucide-react";
+import { Check, Flame, Sparkles, Zap, Gift } from "lucide-react";
 
 const plans = [
   {
     name: "Spark",
     icon: Sparkles,
-    price: 29,
+    price: 99,
+    lifetimePrice: 19,
     description: "Perfect for getting started with social media automation",
     credits: 50,
     features: [
@@ -19,13 +20,14 @@ const plans = [
       "Manual scheduling",
       "Email support",
     ],
-    cta: "Start with Spark",
+    cta: "Get Spark",
     popular: false,
   },
   {
     name: "Blaze",
     icon: Flame,
-    price: 79,
+    price: 299,
+    lifetimePrice: 59,
     description: "For creators serious about growing their presence",
     credits: 200,
     features: [
@@ -37,13 +39,14 @@ const plans = [
       "AI image generation",
       "Priority support",
     ],
-    cta: "Go Blaze",
+    cta: "Get Blaze",
     popular: true,
   },
   {
     name: "Inferno",
     icon: Zap,
-    price: 199,
+    price: 999,
+    lifetimePrice: 199,
     description: "Maximum power for agencies and power users",
     credits: 500,
     features: [
@@ -57,7 +60,7 @@ const plans = [
       "Dedicated support",
       "White-label options",
     ],
-    cta: "Unleash Inferno",
+    cta: "Get Inferno",
     popular: false,
   },
 ];
@@ -71,7 +74,7 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <span className="inline-flex items-center space-x-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Flame className="h-4 w-4" />
@@ -81,7 +84,27 @@ export function Pricing() {
             Choose Your <span className="fire-text">Fire Power</span>
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Start free, upgrade when you are ready. All plans include a 14-day free trial.
+            Invest once, benefit forever. No monthly fees, no hidden costs.
+          </p>
+        </motion.div>
+
+        {/* Lifetime Deal Banner */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-12 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 rounded-2xl p-6 md:p-8 text-center text-white"
+        >
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Gift className="h-6 w-6" />
+            <span className="text-lg font-bold uppercase tracking-wide">Limited Time Offer</span>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold mb-2">
+            Lifetime Access - 80% OFF!
+          </h3>
+          <p className="text-orange-100 max-w-2xl mx-auto">
+            Sign up now and lock in lifetime access at 80% off. Includes all future features and updates forever.
           </p>
         </motion.div>
 
@@ -128,11 +151,19 @@ export function Pricing() {
                 {plan.description}
               </p>
 
-              <div className="mb-6">
-                <span className="text-5xl font-bold text-slate-900 dark:text-white">
+              <div className="mb-2">
+                <span className="text-2xl text-slate-400 line-through">
                   ${plan.price}
                 </span>
+              </div>
+              <div className="mb-6">
+                <span className="text-5xl font-bold text-slate-900 dark:text-white">
+                  ${plan.lifetimePrice}
+                </span>
                 <span className="text-slate-500 dark:text-slate-400">/month</span>
+                <span className="ml-2 inline-flex items-center bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-semibold px-2 py-1 rounded">
+                  80% OFF
+                </span>
               </div>
 
               <div className="mb-8">
@@ -149,6 +180,12 @@ export function Pricing() {
                       </span>
                     </li>
                   ))}
+                <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-600 dark:text-slate-300 font-semibold">
+                      All future features included
+                    </span>
+                  </li>
                 </ul>
               </div>
 
@@ -174,7 +211,7 @@ export function Pricing() {
         >
           Need more? Buy additional credits anytime at $1/credit.
           <br />
-          All plans include a 14-day money-back guarantee.
+          All plans include a 30-day money-back guarantee.
         </motion.p>
       </div>
     </section>

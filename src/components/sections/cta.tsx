@@ -62,7 +62,7 @@ export function CTA() {
                 size="lg"
                 className="bg-white text-orange-600 hover:bg-slate-100 hover:text-orange-700 group"
               >
-                Start Your Free Trial
+                Sign Up Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -78,7 +78,7 @@ export function CTA() {
           </div>
 
           <p className="mt-6 text-white/70 text-sm">
-            No credit card required. 14-day free trial.
+            No credit card required. 14-day special offer.
           </p>
         </motion.div>
       </div>

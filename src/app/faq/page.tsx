@@ -16,10 +16,10 @@ const faqCategories = [
     title: 'Getting Started',
     faqs: [
       { question: 'What is KontentFire?', answer: 'KontentFire is an AI-powered social media automation platform that helps businesses create, schedule, and publish engaging content across multiple platforms including LinkedIn, Facebook, Instagram, and Twitter.' },
-      { question: 'How do I create an account?', answer: 'Visit app.kontentfire.com and click "Sign Up" to create your account. You can start with a 14-day free trial that includes full access to all features.' },
+      { question: 'How do I create an account?', answer: 'Visit app.kontentfire.com and click "Sign Up" to create your account. You can start with a limited-time 80% discount that includes full access to all features.' },
       { question: 'Do I need technical skills to use KontentFire?', answer: 'No technical skills required. KontentFire is designed to be user-friendly with an intuitive interface. Simply connect your social accounts, choose a template, and let AI do the heavy lifting.' },
       { question: 'How long does it take to set up?', answer: 'Most users complete setup in under 10 minutes. Connect your social accounts, set your brand preferences, and you\'re ready to create content.' },
-      { question: 'Is there a free trial?', answer: 'Yes! We offer a 14-day free trial with full access to all features. No credit card required to start.' },
+      { question: 'Is there a special offer?', answer: 'Yes! We offer a limited-time 80% discount with full access to all features. No credit card required.' },
     ],
   },
   {

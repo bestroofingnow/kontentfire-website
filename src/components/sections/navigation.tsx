@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Flame, ChevronDown } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -44,15 +45,16 @@ export function Navigation() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-lg" : "bg-transparent"}`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <Flame className="h-10 w-10 text-orange-500 group-hover:scale-110 transition-transform" />
-              <div className="absolute inset-0 bg-orange-500 blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
-            </div>
-            <span className="text-2xl font-bold">
-              <span className="text-slate-800 dark:text-white">Kontent</span>
-              <span className="fire-text">Fire</span>
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/logo.gif"
+              alt="KontentFire"
+              width={200}
+              height={50}
+              className="h-12 w-auto group-hover:scale-105 transition-transform"
+              unoptimized
+              priority
+            />
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">
@@ -79,7 +81,7 @@ export function Navigation() {
 
           <div className="hidden md:flex items-center space-x-4">
             <Link href="https://app.kontentfire.com/login"><Button variant="ghost">Log In</Button></Link>
-            <Link href="https://app.kontentfire.com/register"><Button variant="primary">Start Free Trial</Button></Link>
+            <Link href="https://app.kontentfire.com/register"><Button variant="primary">Sign Up Now</Button></Link>
           </div>
 
           <button className="md:hidden p-2 text-slate-600 dark:text-slate-300" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
@@ -101,7 +103,7 @@ export function Navigation() {
                 <Link href="/about" className="block py-2 text-slate-600 dark:text-slate-300 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>About</Link>
                 <div className="pt-4 space-y-3">
                   <Link href="https://app.kontentfire.com/login" className="block"><Button variant="outline" className="w-full">Log In</Button></Link>
-                  <Link href="https://app.kontentfire.com/register" className="block"><Button variant="primary" className="w-full">Start Free Trial</Button></Link>
+                  <Link href="https://app.kontentfire.com/register" className="block"><Button variant="primary" className="w-full">Sign Up Now</Button></Link>
                 </div>
               </div>
             </motion.div>

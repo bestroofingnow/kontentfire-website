@@ -88,12 +88,12 @@ export function Testimonials() {
           </h3>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
             Join forward-thinking businesses and creators who are automating their content 
-            creation with AI. Start your free trial today.
+            creation with AI. Start your special offer today.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="https://app.kontentfire.com/register">
               <Button size="lg" className="group">
-                Start Free Trial
+                Sign Up Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
