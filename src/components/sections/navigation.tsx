@@ -20,7 +20,7 @@ const navLinks = [
   { href: '/use-cases', label: 'Use Cases' },
   { href: '/pricing', label: 'Pricing' },
   { 
-    href: '/resources', 
+    href: '/blog', 
     label: 'Resources',
     dropdown: [
       { href: '/blog', label: 'Blog' },
