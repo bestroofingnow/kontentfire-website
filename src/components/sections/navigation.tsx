@@ -47,7 +47,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center group">
             <Image
-              src="/logo.png"
+              src="/logo-transparent.gif"
               alt="KontentFire"
               width={200}
               height={50}
