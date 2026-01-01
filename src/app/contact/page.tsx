@@ -8,6 +8,9 @@ import { Mail, MessageSquare, Clock, HelpCircle, ArrowRight } from 'lucide-react
 export const metadata: Metadata = {
   title: 'Contact Us - Get in Touch with KontentFire',
   description: 'Contact KontentFire for support, sales inquiries, or partnership opportunities. We typically respond within 24 hours.',
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 const contactMethods = [

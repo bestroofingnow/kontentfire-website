@@ -8,6 +8,9 @@ import { Sparkles, Calendar, BarChart3, Image as ImageIcon, FileText, Bot, Arrow
 export const metadata: Metadata = {
   title: 'Features - AI Content Generation, Scheduling & Analytics',
   description: 'Explore KontentFire features: AI content generation with GPT-4 and Claude, smart scheduling, multi-platform publishing, analytics, and content templates.',
+  alternates: {
+    canonical: '/features',
+  },
 };
 
 const features = [

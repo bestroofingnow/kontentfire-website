@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Blog - Social Media Tips & AI Content Insights",
   description:
     "Learn how to grow your social media presence with AI-powered content creation. Tips, strategies, and insights from the KontentFire team.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 const fallbackPosts: GHLBlogPost[] = [

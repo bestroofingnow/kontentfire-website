@@ -8,6 +8,9 @@ import { Building2, Users, Briefcase, Store, Megaphone, PenTool, HelpCircle, Arr
 export const metadata: Metadata = {
   title: 'Use Cases - How Businesses Use KontentFire',
   description: 'Discover how agencies, small businesses, marketers, and content creators use KontentFire to automate social media content creation and grow their audience.',
+  alternates: {
+    canonical: '/use-cases',
+  },
 };
 
 const useCases = [

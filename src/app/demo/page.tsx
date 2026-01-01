@@ -8,6 +8,9 @@ import { Play, CheckCircle, Clock, Calendar, HelpCircle, ArrowRight } from 'luci
 export const metadata: Metadata = {
   title: 'Demo - See KontentFire in Action',
   description: 'Watch a product demo or schedule a personalized walkthrough of KontentFire. See how AI-powered content automation can transform your social media strategy.',
+  alternates: {
+    canonical: '/demo',
+  },
 };
 
 const demoHighlights = [

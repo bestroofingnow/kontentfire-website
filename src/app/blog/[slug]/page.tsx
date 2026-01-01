@@ -73,6 +73,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.seo?.title || post.title,
     description: post.seo?.description || post.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
   };
 }
 
@@ -162,6 +165,36 @@ export default async function BlogPostPage({ params }: PageProps) {
         </article>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.seo?.description || post.excerpt,
+            datePublished: post.publishedAt,
+            dateModified: post.publishedAt,
+            author: {
+              "@type": "Organization",
+              name: post.author?.name || "KontentFire Team",
+              url: "https://kontentfire.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "KontentFire",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://kontentfire.com/logo-transparent.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://kontentfire.com/blog/${post.slug}`,
+            },
+          }),
+        }}
+      />
     </>
   );
 }

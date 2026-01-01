@@ -8,6 +8,9 @@ import { HelpCircle, CreditCard, Zap, Shield, ArrowRight } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'FAQ - Frequently Asked Questions About KontentFire',
   description: 'Find answers to common questions about KontentFire, pricing, features, AI content generation, and platform integrations.',
+  alternates: {
+    canonical: '/faq',
+  },
 };
 
 const faqCategories = [

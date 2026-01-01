@@ -82,6 +82,29 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "KontentFire",
+              url: "https://kontentfire.com",
+              logo: "https://kontentfire.com/logo-transparent.png",
+              description: "AI-powered social media content automation platform. Generate, schedule, and publish content across LinkedIn, Facebook, Instagram, and Twitter.",
+              email: "hello@kontentfire.com",
+              sameAs: [
+                "https://twitter.com/kontentfire",
+                "https://linkedin.com/company/kontentfire"
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "support@kontentfire.com",
+                contactType: "customer support"
+              }
+            }),
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

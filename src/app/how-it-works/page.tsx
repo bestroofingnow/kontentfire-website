@@ -8,6 +8,9 @@ import { UserPlus, Link2, Sparkles, Calendar, Rocket, ArrowRight, CheckCircle, H
 export const metadata: Metadata = {
   title: 'How KontentFire Works - Get Started in Minutes',
   description: 'Learn how to set up KontentFire and start automating your social media content.',
+  alternates: {
+    canonical: '/how-it-works',
+  },
 };
 
 const steps = [

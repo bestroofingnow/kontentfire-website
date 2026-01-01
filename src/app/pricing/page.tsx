@@ -6,6 +6,9 @@ import { Pricing } from '@/components/sections/pricing';
 export const metadata: Metadata = {
   title: 'Pricing - KontentFire Plans and Pricing',
   description: 'Choose the perfect KontentFire plan for your needs. Spark, Blaze, and Inferno plans with AI content generation, scheduling, and multi-platform publishing.',
+  alternates: {
+    canonical: '/pricing',
+  },
 };
 
 export default function PricingPage() {

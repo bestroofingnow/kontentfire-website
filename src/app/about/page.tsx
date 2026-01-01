@@ -6,6 +6,9 @@ import { Target, Heart, Zap, Users, HelpCircle } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'About KontentFire - Our Mission and Story',
   description: 'Learn about KontentFire, the AI-powered social media automation platform helping businesses create and publish engaging content effortlessly.',
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 const values = [
