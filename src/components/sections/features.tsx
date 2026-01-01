@@ -48,7 +48,7 @@ const features = [
     description:
       "Create stunning visuals with DALL-E and Stable Diffusion. Generate custom images that match your brand.",
     color: "from-pink-500 to-rose-500",
-    link: "/features/image-generation",
+    link: "/features/images",
   },
   {
     icon: FileText,
