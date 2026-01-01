@@ -91,7 +91,7 @@ export function Testimonials() {
             creation with AI. Start your special offer today.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="https://app.kontentfire.com/register">
+            <Link href="https://app.kontentfire.com">
               <Button size="lg" className="group">
                 Sign Up Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

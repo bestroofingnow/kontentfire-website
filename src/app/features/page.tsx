@@ -60,7 +60,7 @@ export default function FeaturesPage() {
           <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Try These Features?</h2>
             <p className="text-slate-300 mb-8">Start your 14-day special offer and experience the power of AI content automation.</p>
-            <Link href="https://app.kontentfire.com/register"><Button size="lg">Sign Up Now<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
+            <Link href="https://app.kontentfire.com"><Button size="lg">Sign Up Now<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
           </div>
         </div>
       </main>

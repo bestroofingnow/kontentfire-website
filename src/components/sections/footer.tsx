@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Flame, Twitter, Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image';
+import { Twitter, Linkedin, Mail } from 'lucide-react';
 
 const footerLinks = {
   product: [
@@ -39,7 +40,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Flame className="h-8 w-8 text-orange-500" />
+              <Image src="/logo-transparent.png" alt="KontentFire" width={40} height={40} className="h-10 w-auto" />
               <span className="text-xl font-bold text-white">Kontent<span className="text-orange-500">Fire</span></span>
             </Link>
             <p className="text-slate-400 mb-6 text-sm">AI-powered content automation for social media. Create, schedule, and publish effortlessly.</p>

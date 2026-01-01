@@ -23,7 +23,7 @@ const faqs = [
   { question: 'How long is the demo?', answer: 'Our self-guided demo takes about 5 minutes. Personalized demo calls typically run 20-30 minutes depending on your questions.' },
   { question: 'Do I need to create an account to watch the demo?', answer: 'No account needed for the self-guided demo video. For a personalized demo call, we\'ll just need your email to schedule.' },
   { question: 'Can I get a demo for my team?', answer: 'Absolutely! We offer team demos for businesses evaluating KontentFire. Contact us to schedule a group session.' },
-  { question: 'What happens after the demo?', answer: 'You can start a 14-day special offer immediately. No credit card required, and you\'ll have full access to all features.' },
+  { question: 'What happens after the demo?', answer: 'Choose a plan and get instant access to all features.' },
   { question: 'Can I see specific features during a live demo?', answer: 'Yes! During personalized demos, we can focus on the features most relevant to your use case and answer specific questions.' },
 ];
 
@@ -61,7 +61,7 @@ export default function DemoPage() {
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white">Self-Guided Tour</h2>
               </div>
               <p className="text-slate-600 dark:text-slate-300 mb-6">Explore KontentFire at your own pace with our interactive demo environment.</p>
-              <Link href="https://app.kontentfire.com/register">
+              <Link href="https://app.kontentfire.com">
                 <Button className="w-full">Sign Up Now <ArrowRight className="ml-2 h-4 w-4" /></Button>
               </Link>
             </div>
@@ -111,7 +111,7 @@ export default function DemoPage() {
           <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
             <p className="text-slate-300 mb-8">Join businesses already using KontentFire to automate their content.</p>
-            <Link href="https://app.kontentfire.com/register">
+            <Link href="https://app.kontentfire.com">
               <Button size="lg">Sign Up Now <ArrowRight className="ml-2 h-5 w-5" /></Button>
             </Link>
           </div>

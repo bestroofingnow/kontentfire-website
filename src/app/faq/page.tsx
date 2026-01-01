@@ -19,7 +19,7 @@ const faqCategories = [
       { question: 'How do I create an account?', answer: 'Visit app.kontentfire.com and click "Sign Up" to create your account. You can start with a limited-time 80% discount that includes full access to all features.' },
       { question: 'Do I need technical skills to use KontentFire?', answer: 'No technical skills required. KontentFire is designed to be user-friendly with an intuitive interface. Simply connect your social accounts, choose a template, and let AI do the heavy lifting.' },
       { question: 'How long does it take to set up?', answer: 'Most users complete setup in under 10 minutes. Connect your social accounts, set your brand preferences, and you\'re ready to create content.' },
-      { question: 'Is there a special offer?', answer: 'Yes! We offer a limited-time 80% discount with full access to all features. No credit card required.' },
+      { question: 'Is there a special offer?', answer: 'Yes! We offer a limited-time 80% discount with full access to all features.' },
     ],
   },
   {
@@ -29,7 +29,7 @@ const faqCategories = [
       { question: 'What plans are available?', answer: 'We offer three plans: Spark ($29/month) for individuals, Blaze ($79/month) for growing businesses, and Inferno ($149/month) for agencies and teams. Annual billing offers a 20% discount.' },
       { question: 'Can I change my plan later?', answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes take effect at your next billing cycle, and we\'ll prorate any differences.' },
       { question: 'What payment methods do you accept?', answer: 'We accept all major credit cards (Visa, MasterCard, American Express, Discover) through our secure Stripe payment processor.' },
-      { question: 'Is there a refund policy?', answer: 'We offer a 30-day money-back guarantee. If you\'re not satisfied with KontentFire, contact support within 30 days of your purchase for a full refund.' },
+      { question: 'Is there a refund policy?', answer: 'If you\'re not satisfied with KontentFire, contact support for assistance.' },
       { question: 'What happens when I run out of credits?', answer: 'You can purchase additional credits at any time, or upgrade to a higher plan for more monthly credits. Your scheduled content will continue to publish even if you\'ve used all credits.' },
     ],
   },

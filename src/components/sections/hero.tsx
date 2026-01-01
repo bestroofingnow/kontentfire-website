@@ -3,54 +3,128 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Play, Sparkles, ArrowRight, CheckCircle } from "lucide-react";
+import { Play, Sparkles, ArrowRight, CheckCircle, Share2, MessageCircle, Heart, ThumbsUp, Send, AtSign, Hash, Bell, Camera, Video, Megaphone, TrendingUp } from "lucide-react";
+import { useEffect, useState, ReactNode } from "react";
 
 const benefits = [
   "AI-powered content generation",
   "Multi-platform publishing",
   "Smart scheduling automation",
-  "No credit card required",
 ];
+
+// Element types for the matrix
+type MatrixElement = { type: 'emoji'; value: string } | { type: 'icon'; icon: string };
+
+// Matrix elements - emojis
+const emojiElements = [
+  "📱", "💬", "❤️", "🔥", "✨", "📈", "🚀", "💡", "🎯", "📊",
+  "👍", "💪", "🌟", "📣", "🎨", "✅", "💰", "🏆", "⚡", "🎉",
+  "📝", "🔔", "💼", "🌐", "📸", "🎬", "💻", "📧", "🤖", "💎",
+];
+
+// Social/engagement icons
+const iconNames = ['share', 'message', 'heart', 'thumbsUp', 'send', 'at', 'hash', 'bell', 'camera', 'video', 'megaphone', 'trending'];
+
+function getRandomElement(): MatrixElement {
+  // 35% chance for icon, 65% for emoji
+  if (Math.random() < 0.35) {
+    return { type: 'icon', icon: iconNames[Math.floor(Math.random() * iconNames.length)] };
+  }
+  return { type: 'emoji', value: emojiElements[Math.floor(Math.random() * emojiElements.length)] };
+}
+
+function renderIcon(iconName: string): ReactNode {
+  const iconClass = "h-9 w-9";
+  switch (iconName) {
+    case 'share': return <Share2 className={iconClass} />;
+    case 'message': return <MessageCircle className={iconClass} />;
+    case 'heart': return <Heart className={iconClass} />;
+    case 'thumbsUp': return <ThumbsUp className={iconClass} />;
+    case 'send': return <Send className={iconClass} />;
+    case 'at': return <AtSign className={iconClass} />;
+    case 'hash': return <Hash className={iconClass} />;
+    case 'bell': return <Bell className={iconClass} />;
+    case 'camera': return <Camera className={iconClass} />;
+    case 'video': return <Video className={iconClass} />;
+    case 'megaphone': return <Megaphone className={iconClass} />;
+    case 'trending': return <TrendingUp className={iconClass} />;
+    default: return null;
+  }
+}
+
+function MatrixColumn({ delay, duration, left }: { delay: number; duration: number; left: string }) {
+  const [elements] = useState(() =>
+    Array.from({ length: 5 }, () => getRandomElement())
+  );
+
+  return (
+    <div
+      className="absolute top-0 flex flex-col gap-16 md:gap-14 text-4xl animate-matrix-fall pointer-events-none select-none"
+      style={{
+        left,
+        animationDelay: `${delay}s`,
+        animationDuration: `${duration}s`,
+      }}
+    >
+      {elements.map((el, i) => (
+        <span
+          key={i}
+          className="text-orange-500"
+          style={{
+            opacity: 0.6 + Math.random() * 0.3,
+          }}
+        >
+          {el.type === 'emoji' ? el.value : renderIcon(el.icon)}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function MatrixBackground() {
+  const [columns, setColumns] = useState<Array<{ id: number; delay: number; duration: number; left: string }>>([]);
+
+  useEffect(() => {
+    // Fewer columns on mobile for better spacing
+    const isMobile = window.innerWidth < 768;
+    const columnCount = isMobile ? 12 : 22;
+
+    const cols = Array.from({ length: columnCount }, (_, i) => ({
+      id: i,
+      delay: Math.random() * 10,
+      duration: 15 + Math.random() * 10,
+      left: `${(i / columnCount) * 100}%`,
+    }));
+    setColumns(cols);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {columns.map((col) => (
+        <MatrixColumn key={col.id} delay={col.delay} duration={col.duration} left={col.left} />
+      ))}
+    </div>
+  );
+}
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900" />
-      
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-300/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+      {/* Matrix-style animated background */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-slate-50 via-orange-50/50 to-amber-50/70">
+        <MatrixBackground />
+        {/* Lighter gradient overlay for better visibility of matrix elements */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/50 to-white/80" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      {/* Content overlay */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-4 py-2 rounded-full text-sm font-medium mb-8"
+            className="inline-flex items-center space-x-2 bg-orange-100/90 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-8"
           >
             <Sparkles className="h-4 w-4" />
             <span>AI-Powered Content Automation</span>
@@ -62,7 +136,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
           >
-            <span className="text-slate-900 dark:text-white">Set Your</span>
+            <span className="text-slate-900">Set Your</span>
             <br />
             <span className="fire-text">Social Media on Fire</span>
           </motion.h1>
@@ -71,10 +145,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-8"
+            className="text-xl sm:text-2xl text-slate-700 max-w-3xl mx-auto mb-8"
           >
-            Generate, schedule, and publish stunning content across LinkedIn, Facebook, 
-            Instagram, and Twitter. Let AI handle content creation while you focus on 
+            Generate, schedule, and publish stunning content across LinkedIn, Facebook,
+            Instagram, and Twitter. Let AI handle content creation while you focus on
             growing your business.
           </motion.p>
 
@@ -86,7 +160,7 @@ export function Hero() {
             className="flex flex-wrap justify-center gap-4 mb-10"
           >
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+              <div key={index} className="flex items-center gap-2 text-slate-700 bg-white/70 px-3 py-1 rounded-full">
                 <CheckCircle className="h-5 w-5 text-green-500" />
                 <span>{benefit}</span>
               </div>
@@ -99,14 +173,14 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
-            <Link href="https://app.kontentfire.com/register">
+            <Link href="https://app.kontentfire.com">
               <Button size="lg" className="group">
                 Sign Up Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link href="/demo">
-              <Button variant="outline" size="lg" className="group">
+              <Button variant="outline" size="lg" className="group bg-white/80 hover:bg-white">
                 <Play className="mr-2 h-5 w-5" />
                 See How It Works
               </Button>
@@ -117,43 +191,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="text-sm text-slate-500 dark:text-slate-400 mb-16"
+            className="text-sm text-slate-600 bg-white/70 inline-block px-4 py-2 rounded-full"
           >
-            14-day special offer. No credit card required. Cancel anytime.
+            Limited time 80% off.
           </motion.p>
-
-          {/* Hero Image / Demo */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-8 relative"
-          >
-            <div className="relative mx-auto max-w-5xl">
-              <div className="bg-slate-800 rounded-t-xl p-3 flex items-center gap-2">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
-                </div>
-                <div className="flex-1 bg-slate-700 rounded-md px-4 py-1 text-sm text-slate-400 text-center">
-                  app.kontentfire.com
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 rounded-b-xl p-8 shadow-2xl glow-orange">
-                <div className="aspect-video bg-gradient-to-br from-orange-500/10 to-amber-500/10 rounded-lg flex items-center justify-center border border-orange-200 dark:border-orange-800">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg">
-                      <Play className="w-10 h-10 text-white ml-1" />
-                    </div>
-                    <p className="text-slate-600 dark:text-slate-300 font-medium">
-                      See KontentFire in Action
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

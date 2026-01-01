@@ -189,7 +189,7 @@ export function Pricing() {
                 </ul>
               </div>
 
-              <Link href="https://app.kontentfire.com/register" className="block">
+              <Link href="https://app.kontentfire.com" className="block">
                 <Button
                   variant={plan.popular ? "primary" : "outline"}
                   className="w-full"
@@ -210,8 +210,6 @@ export function Pricing() {
           className="text-center mt-12 text-slate-500 dark:text-slate-400"
         >
           Need more? Buy additional credits anytime at $1/credit.
-          <br />
-          All plans include a 30-day money-back guarantee.
         </motion.p>
       </div>
     </section>

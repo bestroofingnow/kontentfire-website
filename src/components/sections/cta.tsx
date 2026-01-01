@@ -57,7 +57,7 @@ export function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="https://app.kontentfire.com/register">
+            <Link href="https://app.kontentfire.com">
               <Button
                 size="lg"
                 className="bg-white text-orange-600 hover:bg-slate-100 hover:text-orange-700 group"
@@ -78,7 +78,7 @@ export function CTA() {
           </div>
 
           <p className="mt-6 text-white/70 text-sm">
-            No credit card required. 14-day special offer.
+            Limited time 80% off.
           </p>
         </motion.div>
       </div>

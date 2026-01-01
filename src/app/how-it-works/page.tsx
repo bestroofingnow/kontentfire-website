@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { number: '01', icon: UserPlus, title: 'Create Your Account', description: 'Sign up for a free 14-day trial. No credit card required.', details: ['Quick email signup', 'No credit card needed', 'Instant access'] },
+  { number: '01', icon: UserPlus, title: 'Create Your Account', description: 'Sign up and choose your plan to get started.', details: ['Quick email signup', 'Choose your plan', 'Instant access'] },
   { number: '02', icon: Link2, title: 'Connect Your Platforms', description: 'Link social accounts with secure OAuth.', details: ['One-click connection', 'Secure OAuth', 'Multiple accounts'] },
   { number: '03', icon: Sparkles, title: 'Generate AI Content', description: 'Choose templates or describe your needs.', details: ['Multiple AI models', 'Proven templates', 'Brand customization'] },
   { number: '04', icon: Calendar, title: 'Schedule and Automate', description: 'Review, edit, and schedule content.', details: ['Visual calendar', 'Optimal timing', 'Bulk scheduling'] },
@@ -59,7 +59,7 @@ export default function HowItWorksPage() {
           <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
             <p className="text-slate-300 mb-8">14-day special offer with full access.</p>
-            <Link href="https://app.kontentfire.com/register"><Button size="lg">Sign Up Now<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
+            <Link href="https://app.kontentfire.com"><Button size="lg">Sign Up Now<ArrowRight className="ml-2 h-5 w-5" /></Button></Link>
           </div>
         </div>
       </main>
