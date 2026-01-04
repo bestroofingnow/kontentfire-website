@@ -30,6 +30,17 @@ module.exports = {
     } else if (path.startsWith('/blog/')) {
       priority = 0.8;
       changefreq = 'weekly';
+    } else if (path === '/locations') {
+      priority = 0.8;
+      changefreq = 'weekly';
+    } else if (path.match(/^\/locations\/[^/]+$/)) {
+      // State pages: /locations/california
+      priority = 0.7;
+      changefreq = 'monthly';
+    } else if (path.match(/^\/locations\/[^/]+\/[^/]+$/)) {
+      // City pages: /locations/california/los-angeles
+      priority = 0.6;
+      changefreq = 'monthly';
     }
 
     return {

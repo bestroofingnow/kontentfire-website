@@ -8,8 +8,8 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
-  { 
-    href: '/features', 
+  {
+    href: '/features',
     label: 'Features',
     dropdown: [
       { href: '/features', label: 'All Features' },
@@ -19,8 +19,9 @@ const navLinks = [
   },
   { href: '/use-cases', label: 'Use Cases' },
   { href: '/pricing', label: 'Pricing' },
-  { 
-    href: '/blog', 
+  { href: '/locations', label: 'Locations' },
+  {
+    href: '/blog',
     label: 'Resources',
     dropdown: [
       { href: '/blog', label: 'Blog' },
@@ -109,6 +110,7 @@ export function Navigation() {
                 <Link href="/how-it-works" className="block py-2 text-blue-900 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>How It Works</Link>
                 <Link href="/use-cases" className="block py-2 text-blue-900 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>Use Cases</Link>
                 <Link href="/pricing" className="block py-2 text-blue-900 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>Pricing</Link>
+                <Link href="/locations" className="block py-2 text-blue-900 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>Locations</Link>
                 <Link href="/demo" className="block py-2 text-blue-900 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>Demo</Link>
                 <Link href="/blog" className="block py-2 text-blue-900 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>Blog</Link>
                 <Link href="/faq" className="block py-2 text-blue-900 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>FAQ</Link>

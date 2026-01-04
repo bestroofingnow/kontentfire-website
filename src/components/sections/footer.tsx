@@ -18,6 +18,7 @@ const footerLinks = {
   resources: [
     { label: 'Blog', href: '/blog' },
     { label: 'FAQ', href: '/faq' },
+    { label: 'Locations', href: '/locations' },
     { label: 'Contact', href: '/contact' },
     { label: 'About Us', href: '/about' },
   ],
