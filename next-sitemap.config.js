@@ -33,7 +33,11 @@ module.exports = {
     } else if (path === '/locations') {
       priority = 0.8;
       changefreq = 'weekly';
-    } else if (path.match(/^\/locations\/[^/]+$/)) {
+    } else if (path === '/locations/states' || path === '/locations/cities') {
+      // Index pages for all states and all cities
+      priority = 0.8;
+      changefreq = 'weekly';
+    } else if (path.match(/^\/locations\/[^/]+$/) && path !== '/locations/states' && path !== '/locations/cities') {
       // State pages: /locations/california
       priority = 0.7;
       changefreq = 'monthly';

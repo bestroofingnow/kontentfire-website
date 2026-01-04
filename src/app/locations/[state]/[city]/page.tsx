@@ -199,7 +199,7 @@ export default async function CityPage({ params }: PageProps) {
       </main>
       <Footer />
 
-      {/* JSON-LD Structured Data */}
+      {/* JSON-LD Structured Data - Service Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -212,6 +212,7 @@ export default async function CityPage({ params }: PageProps) {
               '@type': 'Organization',
               name: 'KontentFire',
               url: 'https://kontentfire.com',
+              logo: 'https://kontentfire.com/logo-transparent.png',
             },
             areaServed: {
               '@type': 'City',
@@ -219,12 +220,61 @@ export default async function CityPage({ params }: PageProps) {
               containedInPlace: {
                 '@type': 'State',
                 name: state.name,
+                containedInPlace: {
+                  '@type': 'Country',
+                  name: 'United States',
+                },
               },
             },
             serviceType: 'Social Media Marketing Automation',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'USD',
+              description: 'Free trial available',
+            },
           }),
         }}
       />
+
+      {/* JSON-LD - BreadcrumbList for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://kontentfire.com',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Locations',
+                item: 'https://kontentfire.com/locations',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: state.name,
+                item: `https://kontentfire.com/locations/${stateSlug}`,
+              },
+              {
+                '@type': 'ListItem',
+                position: 4,
+                name: city.name,
+                item: `https://kontentfire.com/locations/${stateSlug}/${citySlug}`,
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* JSON-LD - FAQPage for AEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -239,6 +289,79 @@ export default async function CityPage({ params }: PageProps) {
                 text: faq.answer,
               },
             })),
+          }),
+        }}
+      />
+
+      {/* JSON-LD - HowTo Schema for AEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: `How to Automate Social Media Marketing in ${city.name}, ${state.abbreviation}`,
+            description: `Step-by-step guide to setting up AI-powered social media automation for your ${city.name} business`,
+            step: [
+              {
+                '@type': 'HowToStep',
+                name: 'Sign up for KontentFire',
+                text: 'Create your free account at KontentFire.com. No credit card required to start.',
+                url: 'https://app.kontentfire.com',
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Connect your social accounts',
+                text: 'Link your LinkedIn, Instagram, Facebook, and Twitter accounts to KontentFire.',
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Set your brand voice',
+                text: `Configure your brand voice and preferences for ${city.name}-focused content.`,
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Generate AI content',
+                text: 'Use our AI to create engaging posts tailored for your local audience.',
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Schedule and publish',
+                text: 'Schedule your content for optimal times when your audience is most active.',
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* JSON-LD - LocalBusiness context */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: `Social Media Marketing in ${city.name}, ${state.abbreviation}`,
+            description: `AI-powered social media automation for ${city.name} businesses`,
+            url: `https://kontentfire.com/locations/${stateSlug}/${citySlug}`,
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['h1', '.fire-text', 'h2'],
+            },
+            about: {
+              '@type': 'Thing',
+              name: 'Social Media Marketing',
+            },
+            mentions: {
+              '@type': 'Place',
+              name: city.name,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: city.name,
+                addressRegion: state.abbreviation,
+                addressCountry: 'US',
+              },
+            },
           }),
         }}
       />

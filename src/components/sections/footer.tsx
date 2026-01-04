@@ -18,9 +18,18 @@ const footerLinks = {
   resources: [
     { label: 'Blog', href: '/blog' },
     { label: 'FAQ', href: '/faq' },
-    { label: 'Locations', href: '/locations' },
     { label: 'Contact', href: '/contact' },
     { label: 'About Us', href: '/about' },
+  ],
+  locations: [
+    { label: 'All States', href: '/locations/states' },
+    { label: 'All Cities', href: '/locations/cities' },
+    { label: 'New York City', href: '/locations/new-york/new-york-city' },
+    { label: 'Los Angeles', href: '/locations/california/los-angeles' },
+    { label: 'Chicago', href: '/locations/illinois/chicago' },
+    { label: 'Houston', href: '/locations/texas/houston' },
+    { label: 'Miami', href: '/locations/florida/miami' },
+    { label: 'Atlanta', href: '/locations/georgia/atlanta' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy' },
@@ -38,8 +47,8 @@ export function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <Image src="/logo-transparent.png" alt="KontentFire" width={40} height={40} className="h-10 w-auto" />
               <span className="text-xl font-bold text-white">Kontent<span className="text-orange-500">Fire</span></span>
@@ -60,6 +69,10 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Use Cases</h3>
             <ul className="space-y-3">{footerLinks.useCases.map((link) => (<li key={link.href}><Link href={link.href} className="text-slate-400 hover:text-orange-500 transition-colors text-sm">{link.label}</Link></li>))}</ul>
+          </div>
+          <div>
+            <h3 className="text-white font-semibold mb-4">Locations</h3>
+            <ul className="space-y-3">{footerLinks.locations.map((link) => (<li key={link.href}><Link href={link.href} className="text-slate-400 hover:text-orange-500 transition-colors text-sm">{link.label}</Link></li>))}</ul>
           </div>
           <div>
             <h3 className="text-white font-semibold mb-4">Resources</h3>

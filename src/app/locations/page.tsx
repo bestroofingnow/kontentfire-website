@@ -9,8 +9,20 @@ import { getAllStates, getCitiesForState, formatNumber, State } from '@/data/loc
 export const metadata: Metadata = {
   title: 'Locations - Social Media Marketing Across the USA | KontentFire',
   description: 'KontentFire serves businesses in all 50 US states. Find AI-powered social media marketing solutions for your city and discover local insights.',
+  keywords: 'social media marketing locations, US marketing, local SEO, city marketing, state marketing, AI content marketing',
   alternates: {
     canonical: '/locations',
+  },
+  openGraph: {
+    title: 'Social Media Marketing in All 50 US States | KontentFire',
+    description: 'AI-powered content automation serving businesses across the United States. Find your state and city for local insights.',
+    type: 'website',
+    url: 'https://kontentfire.com/locations',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Social Media Marketing Nationwide | KontentFire',
+    description: 'AI-powered content for businesses in all 50 states and 100+ cities.',
   },
 };
 
