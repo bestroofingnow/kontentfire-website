@@ -13,7 +13,7 @@ const benefits = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -31,13 +31,13 @@ export function Hero() {
       </div>
 
       {/* Content overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-20">
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2 bg-orange-500/90 text-white px-4 py-2 rounded-full text-sm font-medium mb-8"
+            className="inline-flex items-center space-x-2 bg-orange-500/90 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium mb-4 md:mb-8"
           >
             <Sparkles className="h-4 w-4" />
             <span>AI-Powered Content Automation</span>
@@ -47,7 +47,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6"
           >
             <span className="text-white">Set Your</span>
             <br />
@@ -58,7 +58,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8"
+            className="text-base sm:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-4 md:mb-8"
           >
             Generate, schedule, and publish stunning content across LinkedIn, Facebook,
             Instagram, and Twitter. Let AI handle content creation while you focus on
@@ -70,11 +70,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="flex flex-wrap justify-center gap-4 mb-10"
+            className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-10"
           >
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-                <CheckCircle className="h-5 w-5 text-green-400" />
+              <div key={index} className="flex items-center gap-1.5 md:gap-2 text-white text-xs md:text-base bg-white/10 backdrop-blur-sm px-2.5 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20">
+                <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-400" />
                 <span>{benefit}</span>
               </div>
             ))}
@@ -84,7 +84,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-6 md:mb-12"
           >
             <Link href="https://app.kontentfire.com">
               <Button size="lg" className="group">
