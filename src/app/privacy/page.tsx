@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { Navigation } from '@/components/sections/navigation';
 import { Footer } from '@/components/sections/footer';
 import { Shield } from 'lucide-react';
@@ -187,6 +188,29 @@ export default function PrivacyPage() {
               </ul>
             </section>
           </div>
+
+          {/* Explore More */}
+          <section className="mt-16">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Explore More</h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <Link href="/terms" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Terms of Service</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Read our terms</div>
+              </Link>
+              <Link href="/faq" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">FAQ</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Common questions</div>
+              </Link>
+              <Link href="/contact" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Contact</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Get in touch</div>
+              </Link>
+              <Link href="/about" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">About</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Learn about us</div>
+              </Link>
+            </div>
+          </section>
         </div>
       </main>
       <Footer />

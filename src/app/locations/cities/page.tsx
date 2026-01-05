@@ -260,6 +260,29 @@ export default function AllCitiesPage() {
             </div>
           </section>
 
+          {/* Explore More */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Explore More</h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <Link href="/features" className="group bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Features</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">See all capabilities</div>
+              </Link>
+              <Link href="/pricing" className="group bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Pricing</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Plans starting at $29/mo</div>
+              </Link>
+              <Link href="/use-cases" className="group bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Use Cases</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">See who uses KontentFire</div>
+              </Link>
+              <Link href="/locations/states" className="group bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">All States</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Browse 50 states</div>
+              </Link>
+            </div>
+          </section>
+
           {/* CTA */}
           <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-3xl p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -268,11 +291,24 @@ export default function AllCitiesPage() {
             <p className="text-orange-100 mb-8 max-w-2xl mx-auto">
               Join businesses in {allCities.length}+ cities using AI-powered social media marketing in {currentYear}.
             </p>
-            <Link href="https://app.kontentfire.com">
-              <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50">
-                Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="https://app.kontentfire.com">
+                <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50">
+                  Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  View Pricing
+                </Button>
+              </Link>
+            </div>
+            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+              <Link href="/features" className="text-orange-100 hover:text-white transition-colors">Features</Link>
+              <Link href="/how-it-works" className="text-orange-100 hover:text-white transition-colors">How It Works</Link>
+              <Link href="/demo" className="text-orange-100 hover:text-white transition-colors">Watch Demo</Link>
+              <Link href="/faq" className="text-orange-100 hover:text-white transition-colors">FAQ</Link>
+            </div>
           </div>
         </div>
       </main>

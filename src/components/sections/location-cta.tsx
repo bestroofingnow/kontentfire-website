@@ -63,8 +63,15 @@ export function LocationCTA({ city, state }: LocationCTAProps) {
           </Link>
         </div>
 
-        <p className="mt-6 text-orange-100 text-sm">
-          Serving businesses in {city.name} and all {Object.keys(state).length > 0 ? '50' : ''} US states
+        <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+          <Link href="/features" className="text-orange-100 hover:text-white transition-colors">Features</Link>
+          <Link href="/how-it-works" className="text-orange-100 hover:text-white transition-colors">How It Works</Link>
+          <Link href="/use-cases" className="text-orange-100 hover:text-white transition-colors">Use Cases</Link>
+          <Link href="/faq" className="text-orange-100 hover:text-white transition-colors">FAQ</Link>
+        </div>
+
+        <p className="mt-4 text-orange-100 text-sm">
+          Serving businesses in {city.name} and all 50 US states
         </p>
       </div>
     </section>

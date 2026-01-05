@@ -117,6 +117,29 @@ export default function ImagesPage() {
             </div>
           </section>
 
+          {/* Related Features */}
+          <section className="mb-20">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Related Features</h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <Link href="/features/ai-content" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">AI Content</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Generate engaging posts</div>
+              </Link>
+              <Link href="/features/templates" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Content Templates</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Proven content formats</div>
+              </Link>
+              <Link href="/features/scheduling" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Smart Scheduling</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Plan content in advance</div>
+              </Link>
+              <Link href="/features/analytics" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Analytics</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Track performance</div>
+              </Link>
+            </div>
+          </section>
+
           {/* CTA */}
           <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Create Amazing Visuals?</h2>
@@ -125,11 +148,17 @@ export default function ImagesPage() {
               <Link href="https://app.kontentfire.com">
                 <Button size="lg">Sign Up Now <ArrowRight className="ml-2 h-5 w-5" /></Button>
               </Link>
-              <Link href="/features">
+              <Link href="/pricing">
                 <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  View All Features
+                  View Pricing
                 </Button>
               </Link>
+            </div>
+            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+              <Link href="/features" className="text-slate-400 hover:text-white transition-colors">All Features</Link>
+              <Link href="/how-it-works" className="text-slate-400 hover:text-white transition-colors">How It Works</Link>
+              <Link href="/use-cases" className="text-slate-400 hover:text-white transition-colors">Use Cases</Link>
+              <Link href="/locations" className="text-slate-400 hover:text-white transition-colors">Locations</Link>
             </div>
           </div>
         </div>

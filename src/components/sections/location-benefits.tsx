@@ -116,33 +116,6 @@ export function LocationBenefits({ city, state }: LocationBenefitsProps) {
           </div>
         </div>
 
-        {/* Trust Signals */}
-        <div className="mt-12 text-center">
-          <p className="text-slate-500 dark:text-slate-400 mb-4">
-            Trusted by businesses across {state.name}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900 dark:text-white">10,000+</div>
-              <div className="text-sm text-slate-500 dark:text-slate-400">Active Users</div>
-            </div>
-            <div className="h-12 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block" />
-            <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900 dark:text-white">1M+</div>
-              <div className="text-sm text-slate-500 dark:text-slate-400">Posts Generated</div>
-            </div>
-            <div className="h-12 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block" />
-            <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900 dark:text-white">4.9/5</div>
-              <div className="text-sm text-slate-500 dark:text-slate-400">User Rating</div>
-            </div>
-            <div className="h-12 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block" />
-            <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900 dark:text-white">50</div>
-              <div className="text-sm text-slate-500 dark:text-slate-400">US States Served</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

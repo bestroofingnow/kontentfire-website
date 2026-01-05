@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Navigation } from "@/components/sections/navigation";
 import { Footer } from "@/components/sections/footer";
 import { getBlogPosts, getBlogPostBySlug, type GHLBlogPost } from "@/lib/ghl";
-import { Calendar, User, ArrowLeft, Share2 } from "lucide-react";
+import { Calendar, User, ArrowLeft, Share2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const revalidate = 60;
@@ -160,6 +160,45 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <Share2 className="h-4 w-4 mr-2" />
                 Share
               </Button>
+            </div>
+          </div>
+
+          {/* Explore More */}
+          <section className="mt-16">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Explore More</h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <Link href="/features" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Features</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">See all capabilities</div>
+              </Link>
+              <Link href="/pricing" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Pricing</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Plans starting at $29/mo</div>
+              </Link>
+              <Link href="/use-cases" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Use Cases</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">See who uses KontentFire</div>
+              </Link>
+              <Link href="/locations" className="group bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Locations</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Serving all 50 states</div>
+              </Link>
+            </div>
+          </section>
+
+          {/* CTA */}
+          <div className="mt-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Automate Your Content?</h2>
+            <p className="text-slate-300 mb-8">Start creating AI-powered social media content today.</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="https://app.kontentfire.com">
+                <Button size="lg">Sign Up Now <ArrowRight className="ml-2 h-5 w-5" /></Button>
+              </Link>
+              <Link href="/pricing">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  View Pricing
+                </Button>
+              </Link>
             </div>
           </div>
         </article>

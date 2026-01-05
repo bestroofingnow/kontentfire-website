@@ -211,6 +211,35 @@ export function Pricing() {
         >
           Need more? Buy additional credits anytime at $1/credit.
         </motion.p>
+
+        {/* Explore More */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-16"
+        >
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 text-center">Explore More</h3>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <Link href="/features" className="group bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+              <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Features</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">See all capabilities</div>
+            </Link>
+            <Link href="/use-cases" className="group bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+              <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Use Cases</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">See who uses KontentFire</div>
+            </Link>
+            <Link href="/how-it-works" className="group bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+              <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">How It Works</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">3 simple steps</div>
+            </Link>
+            <Link href="/locations" className="group bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all text-center">
+              <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Locations</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">Serving all 50 states</div>
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

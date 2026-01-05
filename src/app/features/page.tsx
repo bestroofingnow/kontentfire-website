@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Navigation } from '@/components/sections/navigation';
 import { Footer } from '@/components/sections/footer';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Calendar, BarChart3, Image as ImageIcon, FileText, Bot, ArrowRight, Zap, HelpCircle } from 'lucide-react';
+import { Sparkles, Calendar, BarChart3, Image as ImageIcon, FileText, Bot, ArrowRight, Zap, HelpCircle, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Features - AI Content Generation, Scheduling & Analytics',
@@ -44,13 +44,39 @@ export default function FeaturesPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {features.map((feature, index) => (
-              <div key={index} className="group bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+              <Link key={index} href={feature.href} className="group bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-600">
                 <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.color} text-white mb-4`}><feature.icon className="h-6 w-6" /></div>
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{feature.title}</h2>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-orange-500 transition-colors">{feature.title}</h2>
                 <p className="text-slate-600 dark:text-slate-300 mb-4">{feature.description}</p>
-              </div>
+                <span className="inline-flex items-center text-orange-500 font-medium text-sm">Learn more <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" /></span>
+              </Link>
             ))}
           </div>
+
+          {/* Related Pages */}
+          <section className="mb-20">
+            <div className="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 border border-slate-100 dark:border-slate-700">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Explore More</h2>
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <Link href="/how-it-works" className="group text-center p-4 rounded-xl hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                  <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">How It Works</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">5-step setup guide</div>
+                </Link>
+                <Link href="/use-cases" className="group text-center p-4 rounded-xl hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                  <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Use Cases</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">See who uses KontentFire</div>
+                </Link>
+                <Link href="/pricing" className="group text-center p-4 rounded-xl hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                  <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Pricing</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">Plans starting at $29/mo</div>
+                </Link>
+                <Link href="/locations" className="group text-center p-4 rounded-xl hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                  <div className="font-semibold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">Locations</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">Serving all 50 states</div>
+                </Link>
+              </div>
+            </div>
+          </section>
 
           <section className="mb-20">
             <div className="text-center mb-12">
