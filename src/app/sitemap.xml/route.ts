@@ -8,7 +8,7 @@ export async function GET() {
   const sitemaps = [
     { url: '/sitemaps/core/sitemap.xml', name: 'Core Pages', count: 13 },
     { url: '/sitemaps/features/sitemap.xml', name: 'Features', count: 7 },
-    { url: '/sitemaps/locations/sitemap.xml', name: 'Locations', count: 169 },
+    { url: '/sitemaps/locations/sitemap.xml', name: 'Locations', count: 218 },
     { url: '/sitemaps/blog/sitemap.xml', name: 'Blog', count: 4 },
   ];
 
@@ -33,7 +33,7 @@ export async function GET() {
     Sitemap Structure:
     - Core: Homepage, pricing, about, contact, legal pages (${sitemaps[0].count} URLs)
     - Features: Feature pages and sub-pages (${sitemaps[1].count} URLs)
-    - Locations: 50 US States + 119 Cities (${sitemaps[2].count} URLs)
+    - Locations: 50 US States + 179 Cities (${sitemaps[2].count} URLs)
     - Blog: Blog listing and posts (${sitemaps[3].count} URLs)
   -->
   ${sitemapEntries}
