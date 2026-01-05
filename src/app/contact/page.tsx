@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/sections/navigation';
 import { Footer } from '@/components/sections/footer';
+import { ContactForm } from '@/components/sections/contact-form';
 import { Button } from '@/components/ui/button';
 import { Mail, MessageSquare, Clock, HelpCircle, ArrowRight } from 'lucide-react';
 
@@ -49,7 +50,14 @@ export default function ContactPage() {
             <p className="text-xl text-slate-600 dark:text-slate-300">Have questions? We&apos;re here to help you succeed with KontentFire.</p>
           </div>
 
+          {/* Contact Form */}
           <section className="mb-16">
+            <ContactForm />
+          </section>
+
+          {/* Quick Contact Options */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Other Ways to Reach Us</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {contactMethods.map((method, index) => (
                 <a key={index} href={method.href} className="group bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
