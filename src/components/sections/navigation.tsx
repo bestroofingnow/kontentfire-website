@@ -93,8 +93,8 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="https://app.kontentfire.com"><Button variant="ghost">Log In</Button></Link>
-            <Link href="https://app.kontentfire.com"><Button variant="primary">Sign Up Now</Button></Link>
+            <Link href="https://app.kontentfire.com/login"><Button variant="ghost">Log In</Button></Link>
+            <Link href="https://app.kontentfire.com/register"><Button variant="primary">Sign Up Now</Button></Link>
           </div>
 
           <button className="md:hidden p-2 text-blue-900" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
@@ -116,8 +116,8 @@ export function Navigation() {
                 <Link href="/faq" className="block py-2 text-blue-900 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>FAQ</Link>
                 <Link href="/about" className="block py-2 text-blue-900 hover:text-orange-500 font-medium" onClick={() => setIsOpen(false)}>About</Link>
                 <div className="pt-4 space-y-3">
-                  <Link href="https://app.kontentfire.com" className="block"><Button variant="outline" className="w-full">Log In</Button></Link>
-                  <Link href="https://app.kontentfire.com" className="block"><Button variant="primary" className="w-full">Sign Up Now</Button></Link>
+                  <Link href="https://app.kontentfire.com/login" className="block"><Button variant="outline" className="w-full">Log In</Button></Link>
+                  <Link href="https://app.kontentfire.com/register" className="block"><Button variant="primary" className="w-full">Sign Up Now</Button></Link>
                 </div>
               </div>
             </motion.div>
