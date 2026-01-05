@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/sections/navigation';
 import { Footer } from '@/components/sections/footer';
+import { Breadcrumb } from '@/components/seo/breadcrumb-schema';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Calendar, BarChart3, Image as ImageIcon, FileText, Bot, ArrowRight, Zap, HelpCircle, MapPin } from 'lucide-react';
+import { Sparkles, Calendar, BarChart3, Image as ImageIcon, FileText, Bot, ArrowRight, Zap, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Features - AI Content Generation, Scheduling & Analytics',
@@ -36,6 +37,7 @@ export default function FeaturesPage() {
       <Navigation />
       <main className="pt-24 pb-16 bg-white dark:bg-slate-900 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Features', href: '/features' }]} className="mb-8" />
           <div className="text-center mb-16">
             <span className="inline-flex items-center space-x-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-4 py-2 rounded-full text-sm font-medium mb-4"><Zap className="h-4 w-4" /><span>Powerful Features</span></span>
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6">Everything You Need to <span className="fire-text">Dominate Social</span></h1>

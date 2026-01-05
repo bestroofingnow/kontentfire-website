@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/sections/navigation';
 import { Footer } from '@/components/sections/footer';
+import { Breadcrumb } from '@/components/seo/breadcrumb-schema';
 import { Button } from '@/components/ui/button';
 import { Building2, Users, Briefcase, Store, Megaphone, PenTool, HelpCircle, ArrowRight } from 'lucide-react';
 
@@ -72,6 +73,7 @@ export default function UseCasesPage() {
       <Navigation />
       <main className="pt-24 pb-16 bg-white dark:bg-slate-900 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Use Cases', href: '/use-cases' }]} className="mb-8" />
           <div className="text-center mb-16">
             <span className="inline-flex items-center space-x-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
               <Briefcase className="h-4 w-4" />

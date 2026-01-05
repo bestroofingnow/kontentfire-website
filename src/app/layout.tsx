@@ -82,26 +82,79 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
+              "@id": "https://kontentfire.com/#organization",
               name: "KontentFire",
               url: "https://kontentfire.com",
-              logo: "https://kontentfire.com/logo-transparent.png",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://kontentfire.com/logo-transparent.png",
+                width: 200,
+                height: 200
+              },
               description: "AI-powered social media content automation platform. Generate, schedule, and publish content across LinkedIn, Facebook, Instagram, and Twitter.",
               email: "hello@kontentfire.com",
+              foundingDate: "2024",
               sameAs: [
                 "https://twitter.com/kontentfire",
                 "https://linkedin.com/company/kontentfire"
               ],
-              contactPoint: {
-                "@type": "ContactPoint",
-                email: "support@kontentfire.com",
-                contactType: "customer support"
-              }
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  email: "support@kontentfire.com",
+                  contactType: "customer support",
+                  availableLanguage: "English"
+                },
+                {
+                  "@type": "ContactPoint",
+                  email: "hello@kontentfire.com",
+                  contactType: "sales",
+                  availableLanguage: "English"
+                }
+              ],
+              areaServed: {
+                "@type": "Country",
+                name: "United States"
+              },
+              knowsAbout: [
+                "Social Media Marketing",
+                "AI Content Generation",
+                "Content Automation",
+                "Digital Marketing"
+              ]
+            }),
+          }}
+        />
+        {/* WebSite Schema with SearchAction */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://kontentfire.com/#website",
+              name: "KontentFire",
+              url: "https://kontentfire.com",
+              description: "AI-powered social media content automation for businesses",
+              publisher: {
+                "@id": "https://kontentfire.com/#organization"
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://kontentfire.com/locations?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              },
+              inLanguage: "en-US"
             }),
           }}
         />

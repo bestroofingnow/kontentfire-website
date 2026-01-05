@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/sections/navigation';
 import { Footer } from '@/components/sections/footer';
+import { Breadcrumb } from '@/components/seo/breadcrumb-schema';
 import { Button } from '@/components/ui/button';
 import { Target, Heart, Zap, Users, HelpCircle, ArrowRight } from 'lucide-react';
 
@@ -34,6 +35,7 @@ export default function AboutPage() {
       <Navigation />
       <main className="pt-24 pb-16 bg-white dark:bg-slate-900 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'About', href: '/about' }]} className="mb-8" />
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6">About <span className="fire-text">KontentFire</span></h1>
             <p className="text-xl text-slate-600 dark:text-slate-300">Building the future of social media content creation.</p>

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/sections/navigation';
 import { Footer } from '@/components/sections/footer';
+import { Breadcrumb } from '@/components/seo/breadcrumb-schema';
 import { Button } from '@/components/ui/button';
 import { Bot, CheckCircle, ArrowRight, Workflow, Timer, RefreshCcw, Settings, HelpCircle } from 'lucide-react';
 
@@ -44,6 +45,7 @@ export default function AutomationPage() {
       <Navigation />
       <main className="pt-24 pb-16 bg-white dark:bg-slate-900 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Features', href: '/features' }, { label: 'Automation', href: '/features/automation' }]} className="mb-8" />
           {/* Hero */}
           <div className="text-center mb-16">
             <span className="inline-flex items-center space-x-2 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-4 py-2 rounded-full text-sm font-medium mb-4">

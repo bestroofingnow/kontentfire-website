@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/sections/navigation';
 import { Footer } from '@/components/sections/footer';
+import { Breadcrumb } from '@/components/seo/breadcrumb-schema';
 import { ContactForm } from '@/components/sections/contact-form';
 import { Button } from '@/components/ui/button';
 import { Mail, MessageSquare, Clock, HelpCircle, ArrowRight } from 'lucide-react';
@@ -45,6 +46,7 @@ export default function ContactPage() {
       <Navigation />
       <main className="pt-24 pb-16 bg-white dark:bg-slate-900 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Contact', href: '/contact' }]} className="mb-8" />
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6">Get in <span className="fire-text">Touch</span></h1>
             <p className="text-xl text-slate-600 dark:text-slate-300">Have questions? We&apos;re here to help you succeed with KontentFire.</p>
