@@ -79,8 +79,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/logo-transparent.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo-transparent.png" />
         <link rel="manifest" href="/manifest.json" />
         {/* Organization Schema */}
         <script
